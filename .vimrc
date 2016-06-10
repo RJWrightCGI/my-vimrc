@@ -5,22 +5,36 @@ set cursorline " highlight current line
 set wildmenu " visual autocomplete for command menu
 set showmatch " highlight matching [{()}]
 
+syntax on
+filetype plugin indent on
+
+" Set Colorscheme
+colorscheme slate
+
 " Searching
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
 nnoremap <leader><space> : nohlsearch<CR>
 
-"Plugins
-
-"Powerline
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+if !has('gui_running')
+	set t_Co=256
+endif
 
 " Always show statusline
 set laststatus=2
 
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
+"#### Plugins #####
 
 "Pathogen
 execute pathogen#infect()
+
+"Lightline config
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ }
+
+
+
+
 
